@@ -1,0 +1,24 @@
+version: 1.0.{build}
+image: Visual Studio 2022
+environment:
+  CODECOV_TOKEN:
+    secure: fKN45vzO+DOUYuBGWFyU2GpMG4qCGQof++HJk6SffOoWs6seM7bZoOM5/HYcqjqn
+  TWINE_USERNAME:
+    secure: tr99GUQQ0Ikdt9JA+va64A==
+  TWINE_PASSWORD:
+    secure: OCiDmNRuUNqKg+waxocmtohketX2/4GZWk+exd0hbsjyHNNt82Tz9kNXOrM8J94ZUFMoCFRkDuT9gtt1cB6fFLMi7PdUsZWJ7EuUnVF0nCYpcXnMGU6pht4qFh8vUKlYuifW8Hhp139umjhs7POKU/Gshyrua+rEmSrMo7ZfyUiCtiXZJZc2xGpyNfrwqjSRmBBs60SMC3bECXJGIohREER+sd2s9SJ/KpHC8QAJ9/Dnjs4P86cORTOWnC0iqJ5B
+  SAFETY_API_KEY:
+    secure: oFPmi+6TDrgw/U9XrmvyG2ZkMp8enZbqGgkPxuBZWOJYjdr2iw5nw5ymNJ+GyBMH
+install:
+- cmd: >-
+    C:\Python311\python -m venv .env
+
+    .env\Scripts\activate.bat
+
+    python -m pip install --upgrade pip setuptools
+
+    pip install tox
+build: off
+test_script:
+- cmd: tox
+deploy: off
