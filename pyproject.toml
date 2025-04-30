@@ -3,12 +3,12 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "sausage_link"
-description = "Implementation of the Sausage Link algorithm base Swinging Door in Python."
+name = "sausage_links"
+description = "Implementation of the Sausage Links algorithm base Swinging Door in Python."
 readme = "README.rst"
 license = "MIT"
 license-files = ["LICENSE"]
-keywords = ["SausageLink"]
+keywords = ["SausageLinks"]
 requires-python = ">= 3.9"
 authors = [
     { name = "Aleksandr F. Mikhaylov (ChelAxe)", email = "chelaxe@gmail.com" }
@@ -30,12 +30,12 @@ classifiers = [
 dynamic = ["version"]
 
 [project.urls]
-Documentation = "https://sausagelink.readthedocs.io/en/latest/"
-Source = "https://github.com/chelaxe/SausageLink"
-Tracker = "https://github.com/chelaxe/SausageLink/issues"
+Documentation = "https://sausagelinks.readthedocs.io/en/latest/"
+Source = "https://github.com/chelaxe/SausageLinks"
+Tracker = "https://github.com/chelaxe/SausageLinks/issues"
 
 [tool.setuptools]
-py-modules = ["sausage_link"]
+py-modules = ["sausage_links"]
 
 [tool.setuptools.dynamic]
-version = { attr = "sausage_link.__version__" }
+version = { attr = "sausage_links.__version__" }

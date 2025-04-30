@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 path.insert(0, abspath("./../src"))
 
 # pylint: disable=wrong-import-position, unused-import, import-error,
-import sausage_link  # noqa: E402, F401
+import sausage_links  # noqa: E402, F401
 
 # pylint: disable=invalid-name, redefined-builtin
 
@@ -45,11 +45,11 @@ intersphinx_mapping: "Dict[str, Tuple[str, None]]" = {
 }
 todo_include_todos: bool = True
 
-project: str = "sausage_link"
+project: str = "sausage_links"
 author: str = "Aleksandr F. Mikhaylov (ChelAxe) <chelaxe@gmail.com>"
 copyright: str = "D.F.H. ChelAxe 2005"
-version: str = sausage_link.__version__
-release: str = sausage_link.__version__
+version: str = sausage_links.__version__
+release: str = sausage_links.__version__
 language: str = "en"
 show_authors: bool = True
 
@@ -59,7 +59,7 @@ html_show_copyright: bool = False
 html_experimental_html5_writer: bool = True
 html_theme_options: "Dict[str, Union[str, bool]]" = {
     "logo": "images/logo.png",
-    "description": "Sausage Link",
+    "description": "Sausage Links",
     "fixed_sidebar": True,
     "sidebar_collapse": True,
     "show_powered_by": False,
@@ -78,8 +78,8 @@ latex_font_size: str = "14pt"
 latex_documents: "List[Tuple[str, str, str, str, str]]" = [
     (
         "index",
-        "sausage_link.tex",
-        "sausage_link",
+        "sausage_links.tex",
+        "sausage_links",
         "Aleksandr F. Mikhaylov (ChelAxe) <chelaxe@gmail.com>",
         "howto",
     )

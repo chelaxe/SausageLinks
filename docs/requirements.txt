@@ -1,2 +1,2 @@
 Sphinx
-sausage_link
+sausage_links

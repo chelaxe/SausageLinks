@@ -1,4 +1,4 @@
-.. sausage_link documentation master file, created by
+.. sausage_links documentation master file, created by
    sphinx-quickstart on Mon Apr 28 01:44:19 2025.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -12,7 +12,7 @@
 Source
 ------
 
-.. automodule:: sausage_link
+.. automodule:: sausage_links
    :members:
 
 Indices and tables

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
 """
-sausage_link
-============
+sausage_links
+=============
 
-Implementation of the Sausage Link algorithm base Swinging Door in Python.
+Implementation of the Sausage Links algorithm base Swinging Door in Python.
 """
 
 from typing import TYPE_CHECKING
@@ -72,7 +72,7 @@ def _sloping_calc(stretch: "Stretch", deviation: "Deviation") -> "Slopings":
     return upper, lower
 
 
-def sausage_link(  # pylint: disable=too-many-branches, too-many-statements
+def sausage_links(  # pylint: disable=too-many-branches, too-many-statements
     source: "Source",
     deviation: "Deviation" = 0.1,
     max_len: "Number" = 0,
@@ -80,7 +80,7 @@ def sausage_link(  # pylint: disable=too-many-branches, too-many-statements
     ema_alpha: "Number" = 0.3,
 ) -> "Generator[Point, None, None]":
     """
-    Implementation of the Sausage Link algorithm base Swinging Door in Python.
+    Implementation of the Sausage Links algorithm base Swinging Door in Python.
 
     :param Source source: source data;
     :param Deviation deviation: compression deflection;
@@ -90,55 +90,55 @@ def sausage_link(  # pylint: disable=too-many-branches, too-many-statements
     :rtype: Generator[Point, None, None]
     :return: Compressed data.
 
-    >>> list(sausage_link(iter([
+    >>> list(sausage_links(iter([
     ...     (1, 6), (2, 6.5), (3, 5.5),
     ...     (4, 6.5), (5, 8), (6, 7.5),
     ...     (7, 8), (8, 9.5),
     ... ]), 1))
     [(1, 6), (7, 8), (8, 9.5)]
 
-    >>> list(sausage_link(iter([
+    >>> list(sausage_links(iter([
     ...     (1, 6), (2, 6.5), (3, 5.5),
     ...     (4, 6.5), (5, 8), (6, 7.5),
     ...     (7, 8), (8, 6),
     ... ]), 1))
     [(1, 6), (7, 8), (8, 6)]
 
-    >>> list(sausage_link(iter([
+    >>> list(sausage_links(iter([
     ...     (1, 6), (2, 6.5), (3, 5.5),
     ...     (4, 6.5), (5, 8), (6, 7.5),
     ...     (7, 8),
     ... ]), 1, 1))
     [(1, 6), (2, 6.5), (3, 5.5), (4, 6.5), (5, 8), (6, 7.5), (7, 8)]
 
-    >>> list(sausage_link(iter([
+    >>> list(sausage_links(iter([
     ...     (1, 6), (2, 6.5), (3, 5.5),
     ...     (4, 6.5), (5, 8), (6, 7.5),
     ...     (7, 9.5), (8, 8),
     ... ]), 1, auto_dev_factor=1))
     [(1, 6), (4, 6.5), (5, 8), (8, 8)]
 
-    >>> list(sausage_link(iter([
+    >>> list(sausage_links(iter([
     ...     (1, 6), (2, 6.5), (3, 5.5),
     ...     (4, 6.5), (5, 8), (6, 7.5),
     ...     (7, 3), (8, 8),
     ... ]), 1, auto_dev_factor=1))
     [(1, 6), (4, 6.5), (5, 8), (6, 7.5), (7, 3), (8, 8)]
 
-    >>> list(sausage_link(iter([
+    >>> list(sausage_links(iter([
     ...     (1, 6), (2, 6.5), (3, 5.5),
     ...     (4, 6.5), (5, 8), (6, 7.5),
     ...     (7, 8),
     ... ]), 0))
     [(1, 6), (2, 6.5), (3, 5.5), (4, 6.5), (5, 8), (6, 7.5), (7, 8)]
 
-    >>> list(sausage_link(iter([]), 1))
+    >>> list(sausage_links(iter([]), 1))
     []
 
-    >>> list(sausage_link(iter([(1, 6),]), 1))
+    >>> list(sausage_links(iter([(1, 6),]), 1))
     [(1, 6)]
 
-    >>> list(sausage_link(iter([(1, 6),(1, 6.5),]), 1))
+    >>> list(sausage_links(iter([(1, 6),(1, 6.5),]), 1))
     Traceback (most recent call last):
         ...
     ValueError: The division by 0 occurs during the calculation of the slope.
